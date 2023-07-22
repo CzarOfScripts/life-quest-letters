@@ -1,0 +1,462 @@
+body
+{
+	margin: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+p
+{
+	margin: 0;
+}
+
+.onTable
+{
+	padding-top: 12px;
+	padding-bottom: 12px;
+	padding-left: 12px;
+	padding-right: 12px;
+	background-color: #F8F8F8;
+	box-shadow: 0px 5px 11px 0px rgba(36, 92, 116, 0.16);
+	border-radius: 20px;
+}
+
+.onTable__text
+{
+	padding-top: 10px;
+	color: #18191F;
+	font-weight: 400;
+	font-size: 18px;
+	line-height: 21px;
+	font-family: Arial;
+}
+
+.table
+{
+	padding-top: 20px;
+	padding-bottom: 50px;
+	padding-right: 20px;
+	padding-left: 20px;
+	margin-left: auto;
+	margin-right: auto;
+	min-width: 320px;
+	width: 100%;
+	max-width: 600px;
+	background-color: #FFFFFF;
+	color: #000000;
+	font-weight: 400;
+	font-size: 16px;
+	line-height: 18px;
+	font-family: Arial;
+}
+
+.imageListTable
+{
+	width: 100%;
+	border-spacing: 0;
+	padding-left: 10px;
+}
+
+.imageListTable tfoot td
+{
+	padding-top: 24px;
+	font-weight: 400;
+	font-size: 16px;
+	line-height: 18px;
+	font-family: Arial;
+}
+
+.imageListTable-imageCell
+{
+	vertical-align: top;
+	width: 45px;
+	height: 45px;
+}
+
+.imageListTable__row:not(:first-child) .imageListTable-imageCell
+{
+	padding-top: 40px;
+}
+
+.imageListTable-imageCell img
+{
+	width: 45px;
+	height: 45px;
+}
+
+.imageListTable-text
+{
+	padding-left: 10px;
+}
+
+.imageListTable__row:not(:first-child) .imageListTable-text
+{
+	padding-top: 40px
+}
+
+.imageListTable-text__title
+{
+	font-weight: 700;
+	font-size: 18px;
+	line-height: 21px;
+	font-family: Arial;
+}
+
+.imageListTable-text__body
+{
+	padding-top: 10px;
+	color: rgba(24, 25, 31, 0.50);
+	font-weight: 400;
+	font-size: 16px;
+	line-height: 18px;
+	font-family: Arial;
+}
+
+h2
+{
+	font-weight: 700;
+	font-size: 24px;
+	line-height: 28px;
+	font-family: Arial;
+}
+
+h3
+{
+	font-weight: 700;
+	font-size: 18px;
+	line-height: 21px;
+	font-family: Arial;
+}
+
+.header__image
+{
+	width: 100%;
+	height: 120px;
+	display: block;
+}
+
+.header__title
+{
+	padding-top: 24px;
+}
+
+.header__text
+{
+	padding-top: 40px;
+	color: #212121;
+	font-weight: 400;
+	font-size: 16px;
+	line-height: 18px;
+	font-family: Arial;
+}
+
+.header__text a
+{
+	color: #215C75;
+	font-weight: 400;
+	font-size: 16px;
+	line-height: 18px;
+	font-family: Arial;
+}
+
+.preFooter
+{
+	padding-top: 20px;
+	padding-bottom: 20px;
+}
+
+.preFooter--center
+{
+	text-align: center;
+}
+
+.preFooter__text
+{
+	font-weight: 400;
+	font-size: 14px;
+	line-height: 16px;
+	font-family: Arial;
+}
+
+.preFooter__team
+{
+	padding-top: 12px;
+	color: #215C75;
+	font-weight: 400;
+	font-size: 12px;
+	line-height: 14px;
+	font-family: Arial;
+}
+
+.footer__social
+{
+	text-align: center;
+	padding-top: 20px;
+	padding-bottom: 24px;
+}
+
+.footer__unsubscribe
+{
+	padding-top: 24px;
+	border-top: 1px solid #F1F1F1;
+	text-align: center;
+	color: #215C75;
+	font-weight: 400;
+	font-size: 14px;
+	line-height: 16px;
+	font-family: Arial;
+}
+
+.footer__unsubscribe a
+{
+	font-weight: 400;
+	font-size: 14px;
+	line-height: 16px;
+	font-family: Arial;
+	color: #000000;
+	text-decoration: none;
+}
+
+.footer__copyright
+{
+	padding-top: 14px;
+	text-align: center;
+	color: #215C75;
+	font-weight: 400;
+	font-size: 14px;
+	line-height: 16px;
+	font-family: Arial;
+}
+
+.button--colorWrapper
+{
+	padding-top: 8px;
+	padding-bottom: 8px;
+	padding-left: 12px;
+	padding-right: 12px;
+	background-color: #EAF4F9;
+	border: 1px solid rgba(255, 255, 255, 0.5);
+	border-radius: 40px;
+}
+
+.button--colorWrapper td
+{
+	font-weight: 700;
+	font-size: 16px;
+	line-height: 18px;
+	font-family: Arial;
+}
+
+.button--imageWrapper
+{
+	padding-top: 12px;
+	padding-bottom: 12px;
+	padding-left: 12px;
+	padding-right: 12px;
+	background: url('/images/background-button.png') center left/cover;
+	background-color: #EAF4F9;
+	border-radius: 24px;
+	text-align: right;
+}
+
+.button
+{
+	display: inline-block;
+	padding-left: 32px;
+	padding-right: 32px;
+	background-color: #215C75;
+	border-radius: 40px;
+	text-decoration: none;
+	color: #FFFFFF;
+	font-weight: 400;
+	font-size: 14px;
+	line-height: 40px;
+	font-family: Arial;
+}
+
+.font-xl
+{
+	font-weight: 400;
+	font-size: 18px;
+	line-height: 21px;
+	font-family: Arial;
+}
+
+.font-lg
+{
+	font-weight: 400;
+	font-size: 16px;
+	line-height: 18px;
+	font-family: Arial;
+}
+
+.font-md
+{
+	font-weight: 400;
+	font-size: 14px;
+	line-height: 16px;
+	font-family: Arial;
+}
+
+.font-sm
+{
+	font-weight: 400;
+	font-size: 12px;
+	line-height: 14px;
+	font-family: Arial;
+}
+
+@media (min-width: 599px)
+{
+	h2
+	{
+		font-size: 40px;
+		line-height: 46px;
+	}
+
+	h3
+	{
+		font-size: 25px;
+		line-height: 29px;
+	}
+
+	.onTable
+	{
+		padding-top: 20px;
+		padding-bottom: 20px;
+		padding-left: 20px;
+		padding-right: 20px;
+	}
+
+	.onTable__text
+	{
+		padding-top: 40px;
+		font-size: 25px;
+		line-height: 29px;
+	}
+
+	.imageListTable tfoot td
+	{
+		padding-top: 40px;
+		font-weight: 400;
+		font-size: 25px;
+		line-height: 29px;
+		font-family: Arial;
+	}
+
+	.imageListTable-imageCell,
+	.imageListTable-imageCell img
+	{
+		width: 80px;
+		height: 80px;
+	}
+
+	.imageListTable-text
+	{
+		padding-left: 50px;
+	}
+
+	.imageListTable-text__title
+	{
+		font-size: 25px;
+		line-height: 29px;
+	}
+
+	.imageListTable-text__body
+	{
+		font-size: 20px;
+		line-height: 23px;
+	}
+
+	.header__image
+	{
+		width: 100%;
+		height: 140px;
+		display: block;
+	}
+
+	.header__title
+	{
+		padding-top: 40px;
+	}
+
+	.header__text
+	{
+		padding-top: 30px;
+		font-size: 25px;
+		line-height: 29px;
+	}
+
+	.header__text a
+	{
+		font-size: 25px;
+		line-height: 29px;
+	}
+
+	.preFooter
+	{
+		padding-top: 30px;
+		padding-bottom: 30px;
+	}
+
+	.preFooter__text
+	{
+		font-size: 25px;
+		line-height: 29px;
+	}
+
+	.preFooter__team
+	{
+		font-size: 20px;
+		line-height: 23px;
+	}
+
+	.footer__social
+	{
+		padding-bottom: 30px;
+	}
+
+	.footer__unsubscribe
+	{
+		padding-top: 30px;
+	}
+
+
+	.button--colorWrapper,
+	.button--imageWrapper
+	{
+		padding-top: 24px;
+		padding-bottom: 24px;
+		padding-left: 24px;
+		padding-right: 24px;
+	}
+
+	.button--colorWrapper td
+	{
+		font-size: 24px;
+		line-height: 28px;
+	}
+
+	.button
+	{
+		padding-left: 80px;
+		padding-right: 80px;
+		font-size: 24px;
+		line-height: 56px;
+	}
+
+	.font-xl
+	{
+		font-size: 25px;
+		line-height: 29px;
+	}
+
+	.font-lg
+	{
+		font-size: 25px;
+		line-height: 29px;
+	}
+}

@@ -1,0 +1,10 @@
+{
+	"type": "commonjs",
+	"scripts": {
+		"build": "node script.js"
+	},
+	"dependencies": {
+		"css-inliner": "^2.0.0",
+		"fs": "^0.0.1-security"
+	}
+}
