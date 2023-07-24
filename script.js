@@ -40,18 +40,19 @@ async function main()
 		try
 		{
 			let fileText = fs.readFileSync(path.join(srcPath, fileName), { encoding: "utf8" });
-			fileText = fileText.replaceAll('src="/images/', 'src="https://test.mylifequest.io/images/');
-
-			const extraCss = (await extractMediaQueriesCss(fileText, inlineCssOptions));
+			const extraCss = await extractMediaQueriesCss(fileText, inlineCssOptions);
 
 			fileText = fileText.replace("</head>", `\t<style type="text/css">${ extraCss }</style>\n</head>`);
 
 			try
 			{
-				const html = await inlineCss(fileText, inlineCssOptions);
+				let html = await inlineCss(fileText, inlineCssOptions);
 
 				try
 				{
+					html = html.replaceAll('src="/images/', 'src="https://test.mylifequest.io/images/');
+					html = html.replaceAll("url('/images/", "url('https://test.mylifequest.io/images/");
+
 					fs.writeFileSync(path.join(distPath, fileName), html, { encoding: "utf8" });
 				}
 				catch (error)
