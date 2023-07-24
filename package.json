@@ -4,7 +4,7 @@
 		"build": "node script.js"
 	},
 	"dependencies": {
-		"css-inliner": "^2.0.0",
-		"fs": "^0.0.1-security"
+		"fs": "^0.0.1-security",
+		"inline-css": "^4.0.2"
 	}
 }

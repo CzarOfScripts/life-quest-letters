@@ -1,42 +1,93 @@
 const fs = require("fs");
 const path = require("path");
-const CSSInliner = require("css-inliner");
+const inlineCss = require("inline-css");
+
+const getHrefContent = require("href-content");
+const getStylesheetList = require("list-stylesheets");
+const mediaQueryText = require("mediaquery-text");
+const { promisify } = require("util");
+const getHrefContentAsync = promisify(getHrefContent);
 
 const srcPath = path.join(__dirname, "src");
 const distPath = path.join(__dirname, "dist");
-
-const inliner = new CSSInliner({ directory: srcPath });
 
 const files = fs.readdirSync(srcPath, { withFileTypes: true }).filter((file) =>
 {
 	return file.isDirectory() === false && path.extname(file.name) === ".html";
 });
 
-for (let i = 0; i < files.length; i++)
+const inlineCssOptions =
 {
-	try
-	{
-		let fileText = fs.readFileSync(path.join(srcPath, files[ i ].name), { encoding: "utf8" });
-		fileText = fileText.replaceAll('src="/images/', 'src="https://test.mylifequest.io/images/');
+	url: `file://${ srcPath }/`,
+	applyTableAttributes: true,
+	applyWidthAttributes: true,
+	removeHtmlSelectors: false,
+	preserveMediaQueries: true,
+	applyLinkTags: true
+};
 
-		inliner.inlineCSSAsync(fileText)
-			.then((html) =>
+main();
+
+async function main()
+{
+	let errors = 0;
+	const startDate = new Date();
+
+	for (let i = 0; i < files.length; i++)
+	{
+		const fileName = files[ i ].name;
+
+		try
+		{
+			let fileText = fs.readFileSync(path.join(srcPath, fileName), { encoding: "utf8" });
+			fileText = fileText.replaceAll('src="/images/', 'src="https://test.mylifequest.io/images/');
+
+			const extraCss = (await extractMediaQueriesCss(fileText, inlineCssOptions));
+
+			fileText = fileText.replace("</head>", `\t<style type="text/css">${ extraCss }</style>\n</head>`);
+
+			try
 			{
+				const html = await inlineCss(fileText, inlineCssOptions);
+
 				try
 				{
-					fs.writeFileSync(path.join(distPath, files[ i ].name), html, { encoding: "utf8" });
+					fs.writeFileSync(path.join(distPath, fileName), html, { encoding: "utf8" });
 				}
 				catch (error)
 				{
-					console.error("[writeFileSync]", error);
+					error += 1;
+					console.error("[writeFileSync] [" + fileName + "]", error);
 				}
-			})
-			.catch((error) => console.error("[inlineCss]", error));
+			}
+			catch (error)
+			{
+				error += 1;
+				console.error("[inlineCss] [" + fileName + "]", error);
+			}
+		}
+		catch (error)
+		{
+			error += 1;
+			console.warn("[readFileSync] [" + fileName + "]", error);
+		}
 	}
-	catch (error)
-	{
-		console.warn("[readFileSync]", error);
-	}
+
+	console.info(`Complete ${ files.length - errors }/${ files.length } file, ${ errors } errors, time: ${ (new Date().getTime()) - startDate.getTime() }ms.`);
 }
 
-console.info(`Complete ${ files.length } files`);
+async function extractMediaQueriesCss(html, options)
+{
+	const data = getStylesheetList(html, options);
+	const mediaCss = [];
+
+	for (const href of data.hrefs)
+	{
+		// @ts-ignore
+		const linkedStyle = await getHrefContentAsync(href, options.url);
+
+		mediaCss.push(mediaQueryText(linkedStyle).replaceAll(";", " !important;"));
+	}
+
+	return mediaCss.join(" ");
+}
