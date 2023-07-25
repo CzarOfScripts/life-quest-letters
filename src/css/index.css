@@ -13,6 +13,11 @@ p
 	margin: 0;
 }
 
+.hide--mobile
+{
+	display: none;
+}
+
 .onTable
 {
 	padding-top: 12px;
@@ -53,6 +58,37 @@ p
 	font-family: Arial;
 }
 
+.imageListTable--col-2
+{
+	width: 100%;
+	border-spacing: 0;
+	text-align: center;
+}
+
+.imageListTable--col-2 .imageListTable-cell
+{
+	vertical-align: top;
+	text-align: center;
+}
+
+.imageListTable--col-2 .imageListTable-text__title
+{
+	display: inline-block;
+	width: 220px;
+	padding-top: 20px;
+}
+
+.imageListTable--col-2 .imageListTable__row:not(:first-child) .imageListTable-cell
+{
+	padding-top: 24px;
+}
+
+.imageListTable--col-2 .imageListTable-cell img
+{
+	width: 200px;
+	height: 200px;
+}
+
 .imageListTable
 {
 	width: 100%;
@@ -60,8 +96,10 @@ p
 	padding-left: 10px;
 }
 
+.imageListTable--col-2 tfoot td,
 .imageListTable tfoot td
 {
+	text-align: left;
 	padding-top: 24px;
 	font-weight: 400;
 	font-size: 16px;
@@ -69,7 +107,7 @@ p
 	font-family: Arial;
 }
 
-.imageListTable-imageCell
+.imageListTable .imageListTable-imageCell
 {
 	vertical-align: top;
 	width: 45px;
@@ -81,7 +119,7 @@ p
 	padding-top: 40px;
 }
 
-.imageListTable-imageCell img
+.imageListTable .imageListTable-imageCell img
 {
 	width: 45px;
 	height: 45px;
@@ -323,6 +361,16 @@ h3
 		line-height: 29px;
 	}
 
+	.hide--mobile
+	{
+		display: inherit;
+	}
+
+	.hide--desktop
+	{
+		display: none;
+	}
+
 	.onTable
 	{
 		padding-top: 20px;
@@ -338,13 +386,12 @@ h3
 		line-height: 29px;
 	}
 
+	.imageListTable--col-2 tfoot td,
 	.imageListTable tfoot td
 	{
 		padding-top: 40px;
-		font-weight: 400;
 		font-size: 25px;
 		line-height: 29px;
-		font-family: Arial;
 	}
 
 	.imageListTable-imageCell,

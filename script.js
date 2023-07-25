@@ -42,7 +42,7 @@ async function main()
 			let fileText = fs.readFileSync(path.join(srcPath, fileName), { encoding: "utf8" });
 			const extraCss = await extractMediaQueriesCss(fileText, inlineCssOptions);
 
-			fileText = fileText.replace("</head>", `\t<style type="text/css">${ extraCss }</style>\n</head>`);
+			fileText = fileText.replace("</head>", `\t<style type="text/css">${ extraCss }\t</style>\n</head>`);
 
 			try
 			{
