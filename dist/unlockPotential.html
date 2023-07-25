@@ -14,6 +14,9 @@
   .hide--mobile {
     display: inherit !important;
   }
+  .hide--mobile-block {
+    display: block !important;
+  }
   .hide--desktop {
     display: none !important;
   }
@@ -34,8 +37,8 @@
     font-size: 25px !important;
     line-height: 29px !important;
   }
-  .imageListTable-imageCell,
-	.imageListTable-imageCell img {
+  .imageListTable .imageListTable-imageCell,
+	.imageListTable .imageListTable-imageCell img {
     width: 80px !important;
     height: 80px !important;
   }
@@ -97,10 +100,14 @@
     line-height: 28px !important;
   }
   .button {
-    padding-left: 80px !important;
-    padding-right: 80px !important;
+    padding-left: 40px !important;
+    padding-right: 40px !important;
     font-size: 24px !important;
     line-height: 56px !important;
+  }
+  .button--wide {
+    padding-left: 80px !important;
+    padding-right: 80px !important;
   }
   .font-xl {
     font-size: 25px !important;
@@ -124,7 +131,8 @@
 			</tr>
 			<tr>
 				<td>
-					<img class="header__image" src="https://test.mylifequest.io/images/unlockPotential.png" alt="" style="display: block; height: 120px; width: 100%;">
+					<img src="https://test.mylifequest.io/images/unlockPotential-header.png" alt="" class="header__image hide--desktop" style="display: block; height: 120px; width: 100%;">
+					<img src="https://test.mylifequest.io/images/unlockPotential-header-desktop.png" alt="" class="header__image hide--mobile-block" style="display: none !important; height: 120px; width: 100%;">
 
 					<h2 class="header__title" style="font-family: Arial; font-size: 24px; font-weight: 700; line-height: 28px; margin: 0; padding-top: 24px;">
 						Unlock Your True Potential 🚀
@@ -161,7 +169,7 @@
 					<table class="imageListTable" style="border-spacing: 0; padding-left: 10px;" border="0" cellpadding="0" cellspacing="0" width="100%">
 						<tbody><tr class="imageListTable__row">
 							<td class="imageListTable-imageCell" style="" width="45" height="45" valign="top">
-								<img src="https://test.mylifequest.io/images/missionFour.png" alt="missionFour" style="height: 45px; width: 45px;" width="45">
+								<img src="https://test.mylifequest.io/images/unlockPotential-image1.png" alt="missionFour" style="height: 45px; width: 45px;" width="45">
 							</td>
 							<td class="imageListTable-text" style="padding-left: 10px;">
 								<div class="imageListTable-text__title" style="font-family: Arial; font-size: 18px; font-weight: 700; line-height: 21px;">
@@ -171,7 +179,7 @@
 						</tr>
 						<tr class="imageListTable__row">
 							<td class="imageListTable-imageCell" style="padding-top: 40px;" width="45" height="45" valign="top">
-								<img src="https://test.mylifequest.io/images/missionTen.png" alt="missionTen" style="height: 45px; width: 45px;" width="45">
+								<img src="https://test.mylifequest.io/images/unlockPotential-image2.png" alt="missionTen" style="height: 45px; width: 45px;" width="45">
 							</td>
 							<td class="imageListTable-text" style="padding-left: 10px; padding-top: 40px;">
 								<div class="imageListTable-text__title" style="font-family: Arial; font-size: 18px; font-weight: 700; line-height: 21px;">
@@ -181,7 +189,7 @@
 						</tr>
 						<tr class="imageListTable__row">
 							<td class="imageListTable-imageCell" style="padding-top: 40px;" width="45" height="45" valign="top">
-								<img src="https://test.mylifequest.io/images/missionEight.png" alt="missionEight" style="height: 45px; width: 45px;" width="45">
+								<img src="https://test.mylifequest.io/images/unlockPotential-image3.png" alt="missionEight" style="height: 45px; width: 45px;" width="45">
 							</td>
 							<td class="imageListTable-text" style="padding-left: 10px; padding-top: 40px;">
 								<div class="imageListTable-text__title" style="font-family: Arial; font-size: 18px; font-weight: 700; line-height: 21px;">
@@ -191,7 +199,7 @@
 						</tr>
 						<tr class="imageListTable__row">
 							<td class="imageListTable-imageCell" style="padding-top: 40px;" width="45" height="45" valign="top">
-								<img src="https://test.mylifequest.io/images/missionSeven.png" alt="missionSeven" style="height: 45px; width: 45px;" width="45">
+								<img src="https://test.mylifequest.io/images/unlockPotential-image4.png" alt="missionSeven" style="height: 45px; width: 45px;" width="45">
 							</td>
 							<td class="imageListTable-text" style="padding-left: 10px; padding-top: 40px;">
 								<div class="imageListTable-text__title" style="font-family: Arial; font-size: 18px; font-weight: 700; line-height: 21px;">
@@ -201,7 +209,7 @@
 						</tr>
 						<tr class="imageListTable__row">
 							<td class="imageListTable-imageCell" style="padding-top: 40px;" width="45" height="45" valign="top">
-								<img src="https://test.mylifequest.io/images/missionNine.png" alt="missionNine" style="height: 45px; width: 45px;" width="45">
+								<img src="https://test.mylifequest.io/images/unlockPotential-image5.png" alt="missionNine" style="height: 45px; width: 45px;" width="45">
 							</td>
 							<td class="imageListTable-text" style="padding-left: 10px; padding-top: 40px;">
 								<div class="imageListTable-text__title" style="font-family: Arial; font-size: 18px; font-weight: 700; line-height: 21px;">
@@ -220,55 +228,61 @@
 				</td>
 			</tr>
 
-			<tr class="hide--mobile" style="display: none;">
+			<tr class="hide--mobile" style="display: none !important;">
 				<td style="padding-top: 40px;">
 					<table class="imageListTable--col-2" style="border-spacing: 0; text-align: center;" border="0" cellpadding="0" cellspacing="0" width="100%">
-						<tbody><tr class="imageListTable__row">
-							<td class="imageListTable-cell" style="" valign="top" align="center">
-								<img src="https://test.mylifequest.io/images/missionFour.png" alt="missionFour" style="height: 200px; width: 200px;" width="200">
-
-								<div class="imageListTable-text__title" style="display: inline-block; font-family: Arial; font-size: 18px; font-weight: 700; line-height: 21px; padding-top: 20px; width: 220px;">
-									Find clarity on your next steps
-								</div>
-							</td>
-
-							<td class="imageListTable-cell" style="" valign="top" align="center">
-								<img src="https://test.mylifequest.io/images/missionTen.png" alt="missionTen" style="height: 200px; width: 200px;" width="200">
-
-								<div class="imageListTable-text__title" style="display: inline-block; font-family: Arial; font-size: 18px; font-weight: 700; line-height: 21px; padding-top: 20px; width: 220px;">
-									Maximize your life and potential
-								</div>
-							</td>
-						</tr>
-						<tr class="imageListTable__row">
-							<td class="imageListTable-cell" style="padding-top: 24px;" valign="top" align="center">
-								<img src="https://test.mylifequest.io/images/missionEight.png" alt="missionEight" style="height: 200px; width: 200px;" width="200">
-
-								<div class="imageListTable-text__title" style="display: inline-block; font-family: Arial; font-size: 18px; font-weight: 700; line-height: 21px; padding-top: 20px; width: 220px;">
-									Design a life in sync with your true self
-								</div>
-							</td>
-
-							<td class="imageListTable-cell" style="padding-top: 24px;" valign="top" align="center">
-								<img src="https://test.mylifequest.io/images/missionSeven.png" alt="missionSeven" style="height: 200px; width: 200px;" width="200">
-
-								<div class="imageListTable-text__title" style="display: inline-block; font-family: Arial; font-size: 18px; font-weight: 700; line-height: 21px; padding-top: 20px; width: 220px;">
-									Harmonize all aspects of life
-								</div>
-							</td>
-						</tr>
-						<tr class="imageListTable__row">
-							<td class="imageListTable-cell" style="padding-top: 24px;" valign="top" align="center">
-								<img src="https://test.mylifequest.io/images/missionNine.png" alt="missionNine" style="height: 200px; width: 200px;" width="200">
-
-								<div class="imageListTable-text__title" style="display: inline-block; font-family: Arial; font-size: 18px; font-weight: 700; line-height: 21px; padding-top: 20px; width: 220px;">
-									Design a life in sync with your true self
-								</div>
-							</td>
-						</tr>
-						</tbody><tfoot>
+						<thead>
 							<tr>
-								<td colspan="2" style="font-family: Arial; font-size: 16px; font-weight: 400; line-height: 18px; padding-top: 24px;" align="left">
+								<th width="220"></th>
+								<th width="220"></th>
+								<th width="220"></th>
+								<th width="220"></th>
+							</tr>
+						</thead>
+
+						<tbody>
+							<tr class="imageListTable__row">
+								<td class="imageListTable-cell" colspan="2" style="" valign="top" align="center">
+									<img src="https://test.mylifequest.io/images/unlockPotential-image1.png" alt="missionFour" style="height: 200px; width: 200px;" width="200">
+									<div class="imageListTable-text__title" style="color: #215C75; display: inline-block; font-family: Arial; font-size: 18px; font-weight: 700; line-height: 21px; padding-top: 20px; width: 220px;">
+										Find clarity on your next steps
+									</div>
+								</td>
+								<td class="imageListTable-cell" colspan="2" style="" valign="top" align="center">
+									<img src="https://test.mylifequest.io/images/unlockPotential-image2.png" alt="missionTen" style="height: 200px; width: 200px;" width="200">
+									<div class="imageListTable-text__title" style="color: #215C75; display: inline-block; font-family: Arial; font-size: 18px; font-weight: 700; line-height: 21px; padding-top: 20px; width: 220px;">
+										Maximize your life and potential
+									</div>
+								</td>
+							</tr>
+							<tr class="imageListTable__row">
+								<td class="imageListTable-cell" colspan="2" style="padding-top: 24px;" valign="top" align="center">
+									<img src="https://test.mylifequest.io/images/unlockPotential-image3.png" alt="missionEight" style="height: 200px; width: 200px;" width="200">
+									<div class="imageListTable-text__title" style="color: #215C75; display: inline-block; font-family: Arial; font-size: 18px; font-weight: 700; line-height: 21px; padding-top: 20px; width: 220px;">
+										Design a life in sync with your true self
+									</div>
+								</td>
+								<td class="imageListTable-cell" colspan="2" style="padding-top: 24px;" valign="top" align="center">
+									<img src="https://test.mylifequest.io/images/unlockPotential-image4.png" alt="missionSeven" style="height: 200px; width: 200px;" width="200">
+									<div class="imageListTable-text__title" style="color: #215C75; display: inline-block; font-family: Arial; font-size: 18px; font-weight: 700; line-height: 21px; padding-top: 20px; width: 220px;">
+										Harmonize all aspects of life
+									</div>
+								</td>
+							</tr>
+							<tr class="imageListTable__row">
+								<td></td>
+								<td class="imageListTable-cell" colspan="2" style="padding-top: 24px;" valign="top" align="center">
+									<img src="https://test.mylifequest.io/images/unlockPotential-image5.png" alt="missionNine" style="height: 200px; width: 200px;" width="200">
+									<div class="imageListTable-text__title" style="color: #215C75; display: inline-block; font-family: Arial; font-size: 18px; font-weight: 700; line-height: 21px; padding-top: 20px; width: 220px;">
+										Design a life in sync with your true self
+									</div>
+								</td>
+							</tr>
+						</tbody>
+
+						<tfoot>
+							<tr>
+								<td colspan="4" style="font-family: Arial; font-size: 16px; font-weight: 400; line-height: 18px; padding-top: 24px;" align="left">
 									Don't settle for a life that doesn't light you up. Unleash your true potential and start living a life that's in alignment with who you truly are.
 								</td>
 							</tr>

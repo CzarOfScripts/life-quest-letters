@@ -14,6 +14,9 @@
   .hide--mobile {
     display: inherit !important;
   }
+  .hide--mobile-block {
+    display: block !important;
+  }
   .hide--desktop {
     display: none !important;
   }
@@ -34,8 +37,8 @@
     font-size: 25px !important;
     line-height: 29px !important;
   }
-  .imageListTable-imageCell,
-	.imageListTable-imageCell img {
+  .imageListTable .imageListTable-imageCell,
+	.imageListTable .imageListTable-imageCell img {
     width: 80px !important;
     height: 80px !important;
   }
@@ -97,10 +100,14 @@
     line-height: 28px !important;
   }
   .button {
-    padding-left: 80px !important;
-    padding-right: 80px !important;
+    padding-left: 40px !important;
+    padding-right: 40px !important;
     font-size: 24px !important;
     line-height: 56px !important;
+  }
+  .button--wide {
+    padding-left: 80px !important;
+    padding-right: 80px !important;
   }
   .font-xl {
     font-size: 25px !important;
@@ -124,7 +131,8 @@
 			</tr>
 			<tr>
 				<td>
-					<img class="header__image" src="https://test.mylifequest.io/images/communityHeader.png" alt="" style="display: block; height: 120px; width: 100%;">
+					<img src="https://test.mylifequest.io/images/joinOurCommunity-header.png" alt="" class="header__image hide--desktop" style="display: block; height: 120px; width: 100%;">
+					<img src="https://test.mylifequest.io/images/joinOurCommunity-header-desktop.png" alt="" class="header__image hide--mobile-block" style="display: none !important; height: 120px; width: 100%;">
 
 					<h2 class="header__title" style="font-family: Arial; font-size: 24px; font-weight: 700; line-height: 28px; margin: 0; padding-top: 24px;">
 						Join Our Tribe of Trailblazers 🌍
@@ -150,12 +158,13 @@
 					<table cellpadding="0" cellspacing="0" width="100%" class="imageListTable" style="border-spacing: 0; padding-left: 10px;" border="0">
 						<tbody><tr class="imageListTable__row">
 							<td class="imageListTable-imageCell" style="" width="45" height="45" valign="top">
-									<img src="https://test.mylifequest.io/images/linkedinIcon.png" alt="" style="height: 45px; width: 45px;" width="45">
+									<img src="https://test.mylifequest.io/images/social-in-color.png" alt="" style="height: 45px; width: 45px;" width="45">
 								</td>
 								<td class="imageListTable-text" style="padding-left: 10px;">
 									<div class="imageListTable-text__title" style="font-family: Arial; font-size: 18px; font-weight: 700; line-height: 21px;">
 										LinkedIn
 									</div>
+
 									<div class="imageListTable-text__body" style="color: rgba(24, 25, 31, 0.50); font-family: Arial; font-size: 16px; font-weight: 400; line-height: 18px; padding-top: 10px;">
 										Connect with us on LinkedIn for thought-provoking
 										discussions, and exclusive updates.
@@ -164,12 +173,13 @@
 							</tr>
 							<tr class="imageListTable__row">
 								<td class="imageListTable-imageCell" style="padding-top: 40px;" width="45" height="45" valign="top">
-									<img src="https://test.mylifequest.io/images/instaIcon.png" alt="" style="height: 45px; width: 45px;" width="45">
+									<img src="https://test.mylifequest.io/images/social-instagram-color.png" alt="" style="height: 45px; width: 45px;" width="45">
 								</td>
 								<td class="imageListTable-text" style="padding-left: 10px; padding-top: 40px;">
 									<div class="imageListTable-text__title" style="font-family: Arial; font-size: 18px; font-weight: 700; line-height: 21px;">
 										Instagram
 									</div>
+
 									<div class="imageListTable-text__body" style="color: rgba(24, 25, 31, 0.50); font-family: Arial; font-size: 16px; font-weight: 400; line-height: 18px; padding-top: 10px;">
 										Follow us on Instagram for a daily dose of motivation &amp;
 										vibrant visuals. Get ready to add some color to your feed!
@@ -178,12 +188,13 @@
 							</tr>
 							<tr class="imageListTable__row">
 								<td class="imageListTable-imageCell" style="padding-top: 40px;" width="45" height="45" valign="top">
-									<img src="https://test.mylifequest.io/images/facebookIcon.png" alt="" style="height: 45px; width: 45px;" width="45">
+									<img src="https://test.mylifequest.io/images/social-facebock-color.png" alt="" style="height: 45px; width: 45px;" width="45">
 								</td>
 								<td class="imageListTable-text" style="padding-left: 10px; padding-top: 40px;">
 									<div class="imageListTable-text__title" style="font-family: Arial; font-size: 18px; font-weight: 700; line-height: 21px;">
 										Facebook
 									</div>
+
 									<div class="imageListTable-text__body" style="color: rgba(24, 25, 31, 0.50); font-family: Arial; font-size: 16px; font-weight: 400; line-height: 18px; padding-top: 10px;">
 										Like our Facebook page to stay in the loop with the latest
 										news, events, and community discussions.
@@ -192,12 +203,13 @@
 							</tr>
 							<tr class="imageListTable__row">
 								<td class="imageListTable-imageCell" style="padding-top: 40px;" width="45" height="45" valign="top">
-									<img src="https://test.mylifequest.io/images/mediumBlogIcon.png" alt="" style="height: 45px; width: 45px;" width="45">
+									<img src="https://test.mylifequest.io/images/social-twitter-color.png" alt="" style="height: 45px; width: 45px;" width="45">
 								</td>
 								<td class="imageListTable-text" style="padding-left: 10px; padding-top: 40px;">
 									<div class="imageListTable-text__title" style="font-family: Arial; font-size: 18px; font-weight: 700; line-height: 21px;">
 										Medium Blog
 									</div>
+
 									<div class="imageListTable-text__body" style="color: rgba(24, 25, 31, 0.50); font-family: Arial; font-size: 16px; font-weight: 400; line-height: 18px; padding-top: 10px;">
 										Explore the captivating world of life design with our
 										founder Natalya's insightful articles on Medium

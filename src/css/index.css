@@ -13,9 +13,10 @@ p
 	margin: 0;
 }
 
-.hide--mobile
+.hide--mobile,
+.hide--mobile-block
 {
-	display: none;
+	display: none !important;
 }
 
 .onTable
@@ -364,12 +365,17 @@ h3
 
 	.hide--mobile
 	{
-		display: inherit;
+		display: inherit !important;
+	}
+
+	.hide--mobile-block
+	{
+		display: block !important;
 	}
 
 	.hide--desktop
 	{
-		display: none;
+		display: none !important;
 	}
 
 	.onTable
@@ -395,8 +401,8 @@ h3
 		line-height: 29px;
 	}
 
-	.imageListTable-imageCell,
-	.imageListTable-imageCell img
+	.imageListTable .imageListTable-imageCell,
+	.imageListTable .imageListTable-imageCell img
 	{
 		width: 80px;
 		height: 80px;
@@ -490,10 +496,16 @@ h3
 
 	.button
 	{
-		padding-left: 80px;
-		padding-right: 80px;
+		padding-left: 40px;
+		padding-right: 40px;
 		font-size: 24px;
 		line-height: 56px;
+	}
+
+	.button--wide
+	{
+		padding-left: 80px;
+		padding-right: 80px;
 	}
 
 	.font-xl
