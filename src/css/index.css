@@ -76,6 +76,7 @@ p
 	display: inline-block;
 	width: 220px;
 	padding-top: 20px;
+	color: #215C75;
 }
 
 .imageListTable--col-2 .imageListTable__row:not(:first-child) .imageListTable-cell
