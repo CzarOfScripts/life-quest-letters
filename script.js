@@ -44,28 +44,18 @@ async function main()
 
 			fileText = fileText.replace("</head>", `\t<style type="text/css">${ extraCss }\t</style>\n</head>`);
 
-			try
-			{
-				let html = await inlineCss(fileText, inlineCssOptions);
+			let html = await inlineCss(fileText, inlineCssOptions);
 
-				try
-				{
-					html = html.replaceAll('src="/images/', 'src="https://test.mylifequest.io/images/');
-					html = html.replaceAll("url('/images/", "url('https://test.mylifequest.io/images/");
+			html = html.replaceAll('src="/images/', 'src="{{image_url}}/images/');
+			html = html.replaceAll("url('/images/", "url('{{image_url}}/images/");
 
-					fs.writeFileSync(path.join(distPath, fileName), html, { encoding: "utf8" });
-				}
-				catch (error)
+			fs.writeFileSync(
+				path.format({ ...path.parse(path.join(distPath, fileName)), base: "", ext: ".hbs" }),
+				html,
 				{
-					error += 1;
-					console.error("[writeFileSync] [" + fileName + "]", error);
+					encoding: "utf8"
 				}
-			}
-			catch (error)
-			{
-				error += 1;
-				console.error("[inlineCss] [" + fileName + "]", error);
-			}
+			);
 		}
 		catch (error)
 		{
