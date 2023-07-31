@@ -16,7 +16,7 @@ p
 .hide--mobile,
 .hide--mobile-block
 {
-	display: none !important;
+	display: none;
 }
 
 .onTable
