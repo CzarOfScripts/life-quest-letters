@@ -60,7 +60,7 @@ async function main()
 		catch (error)
 		{
 			error += 1;
-			console.warn("[readFileSync] [" + fileName + "]", error);
+			console.warn("[" + fileName + "]", error);
 		}
 	}
 
